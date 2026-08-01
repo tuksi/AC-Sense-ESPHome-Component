@@ -33,11 +33,11 @@ external_components:
 ```yaml
 ac_sense:
   id: my_ac_sense
-  pin_clock: GPIOXX
-  pin_grab: GPIOXX
-  pin_data: GPIOXX
-  num_channels: 8
-  update_interval: 50ms
+  pin_clock: GPIOXX     # GPIO for CLOCK
+  pin_grab: GPIOXX      # GPIO for GRAB
+  pin_data: GPIOXX      # GPIO for DATA input
+  num_channels: 8       # number of modules in chain
+  update_interval: 50ms # interval of query status of entire chain
 
 binary_sensor:
   - platform: ac_sense
@@ -48,6 +48,7 @@ binary_sensor:
     ac_sense_id: my_ac_sense
     channel: 2
     name: "AC Unit 2"
+  ..... add more as required .....
 ```
 
 ### `ac_sense` component
